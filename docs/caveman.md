@@ -5,7 +5,7 @@
 - [원본 SKILL.md](https://raw.githubusercontent.com/JuliusBrussee/caveman/4863bc20d9738df2d64870761334b119c3e0c7ce/skills/caveman/SKILL.md)
 - [원본 LICENSE — MIT](https://raw.githubusercontent.com/JuliusBrussee/caveman/4863bc20d9738df2d64870761334b119c3e0c7ce/LICENSE)
 
-제공 Codex가 두 파일을 임시 폴더에 다운로드하고 실제 Skill 본문·라이선스가 모두 도착했는지 확인한 뒤, 제공 버전이 지원하는 Skill 경로에 폴더째 둔다. 과제의 `.agents/skills/caveman/`를 지원하면 그곳을 쓴다. 기존 파일은 덮어쓰지 않는다. 같은 원본 두 파일이 있으면 재사용하고, 충돌하거나 Skill 경로를 쓸 수 없으면 허용된 별도 참고 경로에 둔다. 패키지나 실행 스크립트는 필요 없다.
+제공 Codex가 [스킬 설치 절차](skills.md)에 따라 **사용자 스킬 경로의 `caveman/`에 설치**한다. 제공 `skill-installer`를 사용하거나 위 원본 두 파일을 임시 폴더에 받은 뒤 설치한다. 실제 Skill 본문·LICENSE가 모두 도착했는지 확인하며 원문은 그대로 둔다. 기존 같은 원본은 재사용하고 다른 파일은 덮어쓰지 않는다. 별도 참고 폴더에 두는 것으로 정상 설치를 대신하지 않는다.
 
 설치 결과는 **원본 준비 여부와 실제 경로**만 짧게 알린다. 일부만 받았으면 설치 완료라고 하지 않고 Skill 검색 경로에 배치하지 않는다. 다운로드 실패 때문에 본 작업을 멈추거나 Codex·전역 설정을 바꾸지 않는다. [출처와 라이선스](sources.md#caveman-공개-원본을-다운로드해서-사용).
 
@@ -15,7 +15,7 @@
 
 | 입력 | 동작 |
 | --- | --- |
-| `$caveman` | CLI가 설치한 원본을 발견했을 때 호출 |
+| `/skills`에서 `caveman` 선택 / `$caveman` | 설치한 원본 호출 |
 | `짧게` / `caveman 켜` | 설치한 원본 SKILL.md를 실제 경로로 읽어 적용 |
 | `짧게 lite` / `짧게 ultra` | 원본이 제공하는 압축 강도 선택 |
 | `보통으로` / `normal mode` / `stop caveman` | 해제 |

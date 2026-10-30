@@ -1,0 +1,4 @@
+interface:
+  display_name: "서술형 대비"
+  short_description: "실제 작업의 선택 이유와 검증 근거를 정리하고 설명 연습"
+  default_prompt: "$explain-work 방금 작업의 선택과 검증을 정리하고 설명 연습을 시작해줘."

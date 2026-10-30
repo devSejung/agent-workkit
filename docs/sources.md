@@ -9,7 +9,8 @@
 | [Cofa 인터뷰 정리 — 조쉬의 뉴스레터](https://maily.so/josh/posts/x1zg69d3rqg) | 모호한 요구를 질문으로 구체화, AI 사용 의도, 결과 이해, 익숙한 작업 방식 재사용 | 본문을 읽고 작업 설계의 배경으로 참고. 기사·이미지는 복제하지 않음. 이번 시험의 확정 채점표가 아님 |
 | [사용자가 제시한 인터뷰 영상](https://www.youtube.com/watch?v=CLpN3zl8noQ) | 인터뷰 원출처 링크 | 영상 본문은 접근 제한으로 직접 확인하지 못함. 시청·자막 검증을 했다고 주장하지 않음 |
 | [OpenAI: AGENTS.md](https://developers.openai.com/codex/guides/agents-md) | 경로·시작 시점에 따른 지침 발견, 별도 clone과 현재 과제 적용의 차이 | 실제 공식 문서 본문 확인. 설정 변경 예제는 복사하지 않음 |
-| [OpenAI: Skills](https://developers.openai.com/codex/skills) | 발견과 적용이 환경에 의존하므로 명시적 파일 읽기를 기본으로 선택 | 외부 Skill 번들·자동 설치기를 복제하지 않음. 자체 설명 연습 Skill도 명시 경로로 사용 |
+| [OpenAI: Skills](https://developers.openai.com/codex/skills) | 사용자 스킬 설치·자동 발견, `/skills`와 `$skill` 호출 | Caveman·explain-work를 정상 경로에 설치. 외부 Skill 번들·자동 설치기를 복제하지 않음 |
+| [OpenAI: Iterating Development Workflows with Codex](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) | `${CODEX_HOME:-$HOME/.codex}/skills` 사용자 설치 위치 | 제공 skill-installer의 기본 위치를 우선하고 기존 사용자 스킬 경로를 존중 |
 | [OpenAI: CLI reference](https://developers.openai.com/codex/cli/reference) | 제공 버전 도움말을 확인한 뒤 이미지 입력을 시험하는 방법 | 현재 `-i`/`--image` 설명을 참고. 제공 환경의 옵션·이미지 동작은 미확인 |
 | [OpenAI: CLI 권한 옵션](https://learn.chatgpt.com/docs/cli/reference) | `-a never`와 `-s danger-full-access`의 의미와 구분 | 제공 환경에서 적용 가능한지 미확인. 권한 설정 자동 변경이나 관리자 제한 우회 절차를 넣지 않음 |
 
