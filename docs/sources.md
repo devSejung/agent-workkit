@@ -24,6 +24,7 @@
 | [W3C WAI: User Notifications](https://www.w3.org/WAI/tutorials/forms/notifications/) | 성공·오류 피드백, 이해하고 수정할 수 있는 오류 안내 |
 | [web.dev: Responsive web design basics](https://web.dev/articles/responsive-web-design-basics) | 대상 화면에 맞는 콘텐츠 배치와 넘침 점검 |
 | [Playwright: Assertions](https://playwright.dev/docs/test-assertions) | 행동 뒤 실제 기대 상태를 검증하는 개념. 도구 도입·시험 사용 허용을 뜻하지 않음 |
+| [Vite: Server Options](https://vite.dev/config/server-options) | host 바인딩과 실제 사용 포트가 요청 포트와 다를 수 있다는 점. Vite 설치나 특정 포트를 강제하지 않고 실제 프로젝트 설정을 확인하는 근거로 사용 |
 
 UI/UX 지침은 전체 접근성 표준 준수나 모든 화면 품질을 보장하는 인증 목록이 아니다. 과제의 실제 요구와 확인한 범위에 맞춰 사용한다.
 
