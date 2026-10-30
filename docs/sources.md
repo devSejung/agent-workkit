@@ -11,8 +11,15 @@
 | [OpenAI: AGENTS.md](https://developers.openai.com/codex/guides/agents-md) | 경로·시작 시점에 따른 지침 발견, 별도 clone과 현재 과제 적용의 차이 | 실제 공식 문서 본문 확인. 설정 변경 예제는 복사하지 않음 |
 | [OpenAI: Skills](https://developers.openai.com/codex/skills) | 발견과 적용이 환경에 의존하므로 명시적 파일 읽기를 기본으로 선택 | SKILL.md·자동 설치 구성은 배포하지 않음 |
 | [OpenAI: CLI reference](https://developers.openai.com/codex/cli/reference) | 제공 버전 도움말을 확인한 뒤 이미지 입력을 시험하는 방법 | 현재 `-i`/`--image` 설명을 참고. 제공 환경의 옵션·이미지 동작은 미확인 |
+| [OpenAI: CLI 권한 옵션](https://learn.chatgpt.com/docs/cli/reference) | `-a never`와 `-s danger-full-access`의 의미와 구분 | 제공 환경에서 적용 가능한지 미확인. 권한 설정 자동 변경이나 관리자 제한 우회 절차를 넣지 않음 |
 
 주최 측 안내는 사용자가 전달한 요약을 [환경 문서](environment.md)에 운영 전제로 정리했다. 원문 메일·개인 링크를 수록하거나 독립적으로 확인한 공개 자료처럼 표기하지 않는다. 커뮤니티 체험담은 환경 차이를 점검해야 하는 배경이며 공통 성공법의 증거로 사용하지 않는다.
+
+## Caveman: 공개 원본을 다운로드해서 사용
+
+[JuliusBrussee/caveman의 SKILL.md](https://github.com/JuliusBrussee/caveman/blob/4863bc20d9738df2d64870761334b119c3e0c7ce/skills/caveman/SKILL.md)와 [같은 커밋의 LICENSE](https://github.com/JuliusBrussee/caveman/blob/4863bc20d9738df2d64870761334b119c3e0c7ce/LICENSE)를 실제로 읽었다. 커밋은 `4863bc20d9738df2d64870761334b119c3e0c7ce`, MIT, Copyright (c) 2026 Julius Brussee다. 사용자가 지정한 Skill 본문과 일치하는 버전이다.
+
+별도 재작성본·전체 번들을 이 저장소에 넣지 않는다. 제공 환경의 Codex가 세팅 때 원본 SKILL.md와 해당 LICENSE 두 파일을 내려받게 한다. 원문의 압축 문체·강도·해제 방식을 사용하며 코드·문서의 정상 문체와 명확성이 필요한 예외를 유지한다. 토큰 절감 수치는 이 작업에서 측정하지 않았다. 현재 upstream main의 라이선스와 이 고정 커밋의 MIT를 섞지 않는다. [다운로드·발견·호출 절차](caveman.md).
 
 ## UI/UX의 보조 근거
 
