@@ -9,7 +9,7 @@
 | [Cofa 인터뷰 정리 — 조쉬의 뉴스레터](https://maily.so/josh/posts/x1zg69d3rqg) | 모호한 요구를 질문으로 구체화, AI 사용 의도, 결과 이해, 익숙한 작업 방식 재사용 | 본문을 읽고 작업 설계의 배경으로 참고. 기사·이미지는 복제하지 않음. 이번 시험의 확정 채점표가 아님 |
 | [사용자가 제시한 인터뷰 영상](https://www.youtube.com/watch?v=CLpN3zl8noQ) | 인터뷰 원출처 링크 | 영상 본문은 접근 제한으로 직접 확인하지 못함. 시청·자막 검증을 했다고 주장하지 않음 |
 | [OpenAI: AGENTS.md](https://developers.openai.com/codex/guides/agents-md) | 경로·시작 시점에 따른 지침 발견, 별도 clone과 현재 과제 적용의 차이 | 실제 공식 문서 본문 확인. 설정 변경 예제는 복사하지 않음 |
-| [OpenAI: Skills](https://developers.openai.com/codex/skills) | 발견과 적용이 환경에 의존하므로 명시적 파일 읽기를 기본으로 선택 | SKILL.md·자동 설치 구성은 배포하지 않음 |
+| [OpenAI: Skills](https://developers.openai.com/codex/skills) | 발견과 적용이 환경에 의존하므로 명시적 파일 읽기를 기본으로 선택 | 외부 Skill 번들·자동 설치기를 복제하지 않음. 자체 설명 연습 Skill도 명시 경로로 사용 |
 | [OpenAI: CLI reference](https://developers.openai.com/codex/cli/reference) | 제공 버전 도움말을 확인한 뒤 이미지 입력을 시험하는 방법 | 현재 `-i`/`--image` 설명을 참고. 제공 환경의 옵션·이미지 동작은 미확인 |
 | [OpenAI: CLI 권한 옵션](https://learn.chatgpt.com/docs/cli/reference) | `-a never`와 `-s danger-full-access`의 의미와 구분 | 제공 환경에서 적용 가능한지 미확인. 권한 설정 자동 변경이나 관리자 제한 우회 절차를 넣지 않음 |
 
@@ -20,6 +20,18 @@
 [JuliusBrussee/caveman의 SKILL.md](https://github.com/JuliusBrussee/caveman/blob/4863bc20d9738df2d64870761334b119c3e0c7ce/skills/caveman/SKILL.md)와 [같은 커밋의 LICENSE](https://github.com/JuliusBrussee/caveman/blob/4863bc20d9738df2d64870761334b119c3e0c7ce/LICENSE)를 실제로 읽었다. 커밋은 `4863bc20d9738df2d64870761334b119c3e0c7ce`, MIT, Copyright (c) 2026 Julius Brussee다. 사용자가 지정한 Skill 본문과 일치하는 버전이다.
 
 별도 재작성본·전체 번들을 이 저장소에 넣지 않는다. 제공 환경의 Codex가 세팅 때 원본 SKILL.md와 해당 LICENSE 두 파일을 내려받게 한다. 원문의 압축 문체·강도·해제 방식을 사용하며 코드·문서의 정상 문체와 명확성이 필요한 예외를 유지한다. 토큰 절감 수치는 이 작업에서 측정하지 않았다. 현재 upstream main의 라이선스와 이 고정 커밋의 MIT를 섞지 않는다. [다운로드·발견·호출 절차](caveman.md).
+
+## 설명 연습 Skill을 만들기 전 비교한 후보
+
+[mattpocock/skills](https://github.com/mattpocock/skills/tree/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa)의 다음 원문과 [LICENSE](https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/LICENSE)를 읽었다. 확인한 커밋은 `a496f5513d4a4cf889bc48e189e579f4b0bdf6aa`, MIT, Copyright (c) 2026 Matt Pocock이다.
+
+| 후보 | 참고한 점 | 그대로 설치하지 않은 이유 |
+| --- | --- | --- |
+| [grilling](https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/productivity/grilling/SKILL.md) (`grill-me`가 연결) | 질문으로 선택을 구체화하고 사실과 사용자의 결정을 구분 | 설계 면접용으로 여러 질문·권장 답을 제시하고 결정 전체를 순회함 |
+| [grill-with-docs](https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/engineering/grill-with-docs/SKILL.md) | 설명을 실제 작업 근거와 연결한다는 방향 | 다른 Skill 호출과 ADR·용어집 작성으로 범위가 커짐 |
+| [teach](https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/productivity/teach/SKILL.md) | 스스로 설명하고 피드백받는 연습 | 여러 세션용 학습 공간·HTML 수업·참고 자료를 생성함 |
+
+원문·코드·템플릿을 복제하지 않았다. 질문과 근거 대조 원칙만 참고해 [explain-work](../skills/explain-work/SKILL.md)를 이 사용자의 짧은 작업 이해 점검에 맞춰 자체 작성했다. 선택 이유·실행 결과는 실제 기록과 사용자 답에서만 가져오며, 시험 문제 예측·답안 대필·점수 보장은 하지 않는다. 설치 수나 인지도를 효과 검증으로 취급하지 않는다.
 
 ## UI/UX의 보조 근거
 
