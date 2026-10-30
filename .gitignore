@@ -1,0 +1,8 @@
+# 실수 방지용이며, 비밀 탐지나 공개 전 검토를 대체하지 않는다.
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+.DS_Store
+Thumbs.db

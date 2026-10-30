@@ -1,0 +1,44 @@
+# 출처와 채택 범위
+
+확인 기준일: 2026-10-31. 공식 문서는 현재 공개 문서이며 제공 Codex 버전의 동작을 보장하지 않는다. 외부 자료는 이번 시험의 채점표나 기능 허용 근거로 승격하지 않는다.
+
+## 배경과 제품 동작
+
+| 자료 | 반영한 내용 | 한계·저작권 처리 |
+| --- | --- | --- |
+| [Cofa 인터뷰 정리 — 조쉬의 뉴스레터](https://maily.so/josh/posts/x1zg69d3rqg) | 모호한 요구를 질문으로 구체화, AI 사용 의도, 결과 이해, 익숙한 작업 방식 재사용 | 본문을 읽고 작업 설계의 배경으로 참고. 기사·이미지는 복제하지 않음. 이번 시험의 확정 채점표가 아님 |
+| [사용자가 제시한 인터뷰 영상](https://www.youtube.com/watch?v=CLpN3zl8noQ) | 인터뷰 원출처 링크 | 영상 본문은 접근 제한으로 직접 확인하지 못함. 시청·자막 검증을 했다고 주장하지 않음 |
+| [OpenAI: AGENTS.md](https://developers.openai.com/codex/guides/agents-md) | 경로·시작 시점에 따른 지침 발견, 별도 clone과 현재 과제 적용의 차이 | 실제 공식 문서 본문 확인. 설정 변경 예제는 복사하지 않음 |
+| [OpenAI: Skills](https://developers.openai.com/codex/skills) | 발견과 적용이 환경에 의존하므로 명시적 파일 읽기를 기본으로 선택 | SKILL.md·자동 설치 구성은 배포하지 않음 |
+| [OpenAI: CLI reference](https://developers.openai.com/codex/cli/reference) | 제공 버전 도움말을 확인한 뒤 이미지 입력을 시험하는 방법 | 현재 `-i`/`--image` 설명을 참고. 제공 환경의 옵션·이미지 동작은 미확인 |
+
+주최 측 안내는 사용자가 전달한 요약을 [환경 문서](environment.md)에 운영 전제로 정리했다. 원문 메일·개인 링크를 수록하거나 독립적으로 확인한 공개 자료처럼 표기하지 않는다. 커뮤니티 체험담은 환경 차이를 점검해야 하는 배경이며 공통 성공법의 증거로 사용하지 않는다.
+
+## UI/UX의 보조 근거
+
+다음 공식 문서 본문을 읽고 UI 과제용 점검 원칙을 새로 작성했다. 코드·이미지·디자인 자산은 복사하지 않았다.
+
+| 자료 | 반영한 범위 |
+| --- | --- |
+| [W3C WAI: Labeling Controls](https://www.w3.org/WAI/tutorials/forms/labels/) | 입력 목적을 설명하는 레이블과 컨트롤 연결 |
+| [W3C WAI: User Notifications](https://www.w3.org/WAI/tutorials/forms/notifications/) | 성공·오류 피드백, 이해하고 수정할 수 있는 오류 안내 |
+| [web.dev: Responsive web design basics](https://web.dev/articles/responsive-web-design-basics) | 대상 화면에 맞는 콘텐츠 배치와 넘침 점검 |
+| [Playwright: Assertions](https://playwright.dev/docs/test-assertions) | 행동 뒤 실제 기대 상태를 검증하는 개념. 도구 도입·시험 사용 허용을 뜻하지 않음 |
+
+UI/UX 지침은 전체 접근성 표준 준수나 모든 화면 품질을 보장하는 인증 목록이 아니다. 과제의 실제 요구와 확인한 범위에 맞춰 사용한다.
+
+## 실제 읽은 공개 Skill
+
+전체 Skill·코드·스크립트를 가져오지 않았다. 아래 파일과 LICENSE를 읽고 필요한 원칙만 이 도구함의 범위에 맞춰 한국어로 새로 작성했다. 링크는 확인한 커밋에 고정한다.
+
+| 원본 | 라이선스 | 채택한 부분 | 제외한 부분 |
+| --- | --- | --- | --- |
+| [obra/superpowers: systematic-debugging](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/systematic-debugging/SKILL.md) | [MIT — Jesse Vincent, 2025](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/LICENSE) | 재현과 원인 근거, 한 가설의 최소 수정, 원래 증상 재검증 → playbooks/debug.md | 모든 버그에 같은 절차·TDD 강제, 특정 횟수 뒤 의무 대화, 도구 예제 |
+| [obra/superpowers: verification-before-completion](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/verification-before-completion/SKILL.md) | 위와 같은 MIT | 완료 주장에 맞는 실제 명령·출력·결과 → playbooks/finish.md | 부분 검증을 전부 무효로 취급하는 표현, 매번 전체 검사, 커밋·PR 흐름 |
+| [openai/openai-agents-python: code-change-verification](https://github.com/openai/openai-agents-python/blob/cd26bbbc52847845fde73b9952b51e62e2bcbdc0/.agents/skills/code-change-verification/SKILL.md) | [MIT — OpenAI, 2025](https://github.com/openai/openai-agents-python/blob/cd26bbbc52847845fde73b9952b51e62e2bcbdc0/LICENSE) | 수정 중 영향 범위 검사와 완료 시 필요한 검사를 구분 → playbooks/implement.md, finish.md | Python·uv·make 명령, 환경 변수, 실행 정책·샌드박스 예외, 호스트 자원 규칙 |
+
+이 저장소의 오픈소스 탐색 절차는 사용자의 재사용 중심 작업 방식에 맞춰 작성했다. 위 Skill이 모든 후보 탐색이나 라이선스 판단을 해결해 준다고 가정하지 않는다.
+
+유지보수와 실행 근거도 범위를 제한한다. OpenAI Agents Python의 해당 커밋에는 공개 [Tests](https://github.com/openai/openai-agents-python/actions/runs/40571108253) 및 [Code Quality: Scheduled](https://github.com/openai/openai-agents-python/actions/runs/40571725199) 성공 기록을 확인했다. 이는 그 프로젝트의 검사 기록이며 이 도구함의 효과나 시험 호환성을 입증하지 않는다. Superpowers는 원문과 공개 유지보수 기록을 확인했지만 조회한 해당 커밋의 Actions 결과는 없었고, 원본 Skill 자체의 효과는 검증하지 않았다.
+
+추후 외부 코드·문구를 실제 복사하거나 상당 부분 변형해 포함할 때는 해당 버전의 원저작권·LICENSE·필요 고지를 함께 보존한다. 이 저장소의 MIT 표기가 원저작자의 조건을 대체하지 않는다.
