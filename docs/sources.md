@@ -13,6 +13,7 @@
 | [OpenAI: Iterating Development Workflows with Codex](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) | `${CODEX_HOME:-$HOME/.codex}/skills` 사용자 설치 위치 | 제공 skill-installer의 기본 위치를 우선하고 기존 사용자 스킬 경로를 존중 |
 | [OpenAI: CLI reference](https://developers.openai.com/codex/cli/reference) | 제공 버전 도움말을 확인한 뒤 이미지 입력을 시험하는 방법 | 현재 `-i`/`--image` 설명을 참고. 제공 환경의 옵션·이미지 동작은 미확인 |
 | [OpenAI: CLI 권한 옵션](https://learn.chatgpt.com/docs/cli/reference) | `-a never`와 `-s danger-full-access`의 의미와 구분 | 제공 환경에서 적용 가능한지 미확인. 권한 설정 자동 변경이나 관리자 제한 우회 절차를 넣지 않음 |
+| [OpenAI: Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli), [CLI reference](https://learn.chatgpt.com/docs/cli/reference) | `/fork`, `/resume`, `/compact`, `/skills`, 파일 경로 첨부와 셸 명령 구분 | 공식 본문을 읽고 CLI 빠른 사용표를 새로 작성. 제공 버전의 메뉴·도움말이 우선하며 대화 포크를 파일 격리로 취급하지 않음 |
 
 주최 측 안내는 사용자가 전달한 요약을 [환경 문서](environment.md)에 운영 전제로 정리했다. 원문 메일·개인 링크를 수록하거나 독립적으로 확인한 공개 자료처럼 표기하지 않는다. 커뮤니티 체험담은 환경 차이를 점검해야 하는 배경이며 공통 성공법의 증거로 사용하지 않는다.
 
@@ -47,6 +48,18 @@
 | [Vite: Server Options](https://vite.dev/config/server-options) | host 바인딩과 실제 사용 포트가 요청 포트와 다를 수 있다는 점. Vite 설치나 특정 포트를 강제하지 않고 실제 프로젝트 설정을 확인하는 근거로 사용 |
 
 UI/UX 지침은 전체 접근성 표준 준수나 모든 화면 품질을 보장하는 인증 목록이 아니다. 과제의 실제 요구와 확인한 범위에 맞춰 사용한다.
+
+## 의사결정 모델과 제한 시간
+
+아래 공식 문서의 목표·제약·풀이 상태·실행 제한 원칙을 읽고 [의사결정 모델](../playbooks/decision-model.md)을 새로 작성했다. 원문 문구·코드·예제 데이터는 복사하지 않았고 솔버 설치를 기본 구성에 넣지 않았다.
+
+| 자료 | 채택한 범위 / 라이선스 확인 |
+| --- | --- |
+| [Google OR-Tools: 시작 안내](https://developers.google.com/optimization/introduction/python) | 목표·변수·제약과 문제 유형, 제약 충족과 최적의 구분. 문서 고지: CC BY 4.0, 코드 예제 Apache 2.0 |
+| [Google OR-Tools: 탐색 제한](https://developers.google.com/optimization/cp/cp_tasks) | 시간·해 개수 제한 개념. 예제의 수치·언어는 강제하지 않음. 같은 문서·코드 라이선스 고지 확인 |
+| [OR-Tools: Troubleshooting](https://github.com/google/or-tools/blob/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/ortools/sat/docs/troubleshooting.md) | 종료 상태와 모델 오류·불가능 원인 확인. 고정 커밋의 [Apache 2.0 LICENSE](https://github.com/google/or-tools/blob/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/LICENSE) 본문 확인. 진단 코드·워커 수·외부 전송 예시는 채택하지 않음 |
+
+설명 가능한 기준선을 먼저 실행하고, 질문·실행을 함께 진행하며, 추가 기능에 남은 시간을 배분하는 순서는 이 도구함의 설계 판단이다. 특정 과제의 답·운영 수치·확정 채점표가 아니다. 업무 질문과 시간 관리 지침에는 일반 절차만 남기며 실제 문제·담당자 답변·데이터·작업 기록은 포함하지 않는다.
 
 ## 실제 읽은 공개 Skill
 
